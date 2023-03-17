@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature converter</title> 
+   <style>  
+   body 
+   { 
+        padding :50px 100px; 
+        margin :5px; 
+        
+    }  
+    .container 
+    {  opacity: 0.8;
+        text-align: center;
+        padding: 20px 20px;
+        background-color: rgb(172, 199, 122); 
+        max-width: 1500px;  
+        height: 200px; 
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS196yUdb_Dk6NUga5HHKzS3rQetKI7JwnR7fpkWmEB4H5yPscLqk7ZlnCzuvTOEGeKmw0&usqp=CAU"); 
+    }
+     
+    h1{ 
+        text-align: center;
+    } 
+    h1:hover{ 
+        color: blue;
+    }
+   .im{ 
+       display: inline-block;
+   } 
+   .la{ 
+       font-size: 30px; 
+       font-style: bold; 
+       display: inline-block; 
+
+   } 
+   .temp{ 
+       display: inline-block;
+   } 
+   .im{ text-align: center;
+       padding: 5px 10px; 
+       margin: 10px; 
+       width: 250px; 
+       font-size: 30px; 
+       font-weight: bold; 
+       border-color: black; 
+       border-radius: 8px;
+   }
+ 
+
+    </style>
+</head>
+<body>
+    <h1>TEMPERATURE CONVERTOR</h1> 
+    <div class="container">  
+        
+        <div id ="c" class ="temp">  
+        <label  class="la">Celsuis</label><br>
+        <input text="number"  value="0" class="im" id="cel"></div>
+        <div id ="f" class="temp"> 
+        <label class="la" >Farenheit</label><br> 
+        <input text="number" value ="32" class="im" id="fr"></div>
+    </div> 
+    <script> 
+    let ce=document.getElementById("cel"); 
+    let fe=document.getElementById("fr"); 
+    ce.addEventListener('input' ,function(){  
+        let C=this.value;
+        let fre=(C * 9/5) + 32; 
+         
+        if(!Number.isInteger(fre)){ 
+            fre=fre.toFixed(4);
+        }
+        fe.value=fre; 
+    }); 
+    fe.addEventListener('input' ,function(){  
+        let F =this.value;
+        let ces=(F - 32) * 5/9
+        if(!Number.isInteger(ces)){ 
+            ces=ces.toFixed(4);
+        }
+        ce.value=ces; 
+
+    }); 
+    </script>
+</body>
+</html>
